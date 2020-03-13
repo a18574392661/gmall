@@ -1,0 +1,5 @@
+com\atguigu\gmall\config\WebMvcConfiguration.class
+com\atguigu\gmall\interceptors\LoginInterceptor.class
+com\atguigu\gmall\util\CookieUtil.class
+com\atguigu\gmall\util\PmsUploadUtil.class
+com\atguigu\gmall\annotations\LoginRequired.class

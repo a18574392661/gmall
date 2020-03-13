@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<table border="1">
+	<tr>
+		<td>用户名</td>
+		<td>姓名</td>
+		<td>手机号码</td>
+		<td>操作</td>
+	</tr>
+	<tr th:each="u : ${list}">
+	 <td th:text="${u.username}"></td>
+	 <td th:text="${u.nickname}"></td>
+	  <td th:text="${u.phone}"></td>
+	  <td><a th:href="@{/del(id=${u.id})}">删除</a><a th:href="@{/to_edit(id=${u.id})}">修改</a></td>
+	</tr>
+	<a href="to_add">新增</a>
+	
+</table>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <form action="edit" method="post">
+   <input type="hidden"  name="id" th:value="${u.id}"><br/>
+    <input type="text" placeholder="用户名" name="username" th:value="${u.username}"><br/>
+        <input type="text" placeholder="真实姓名" name="nickname" th:value="${u.nickname}"><br/>
+  <input type="text" placeholder="密码" name="password" th:value="${u.password}"><br/>
+   <input type="number" placeholder="手机号码" max="11" name="phone" th:value="${u.phone}"><br/>
+   <button>确定新增</button>
+ </form>
+</body>
+</html>

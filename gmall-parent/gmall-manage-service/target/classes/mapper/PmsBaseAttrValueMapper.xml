@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="com.atguigu.gmall.manage.mapper.PmsBaseAttrMapper">
+    
+  
+  
+    <resultMap id="pmsAttrRetus" type="com.atguigu.gmall.bean.PmsBaseAttrInfo" autoMapping="true">
+        <result column="aid" property="id"></result>
+        <collection property="attrValueList" ofType="com.atguigu.gmall.bean.PmsBaseAttrValue" autoMapping="true">
+            <result column="vid" property="id"></result>
+        </collection>
+    </resultMap>
+  
+  
+    
+<select id="queryAttrSku" parameterType="string" resultMap="pmsAttrRetus">
+select info.*,val.*,info.id as aid,val.id as vid from pms_base_attr_info info 
+INNER JOIN pms_base_attr_value VAL
+on info.id=val.attr_id 
+WHERE attr_id in ${pmsAttrs}
+</select>
+ 
+</mapper>

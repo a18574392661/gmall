@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.gmall.manage.mapper.PmsBaseCatalog1Mapper">
+
+
+    
+      <resultMap id="catAll" type="com.atguigu.gmall.bean.PmsBaseCatalog1" autoMapping="true">
+        <result column="c1_id" property="id"></result>
+        <collection property="catalog2s" ofType="com.atguigu.gmall.bean.PmsBaseCatalog2" autoMapping="true">
+            <result column="c2_id" property="id"/>
+	            <collection 	property="catalog3List" ofType="com.atguigu.gmall.bean.PmsBaseCatalog3" autoMapping="true">
+	            		<result  column="c3_id" property="id"/>
+	            </collection>
+          
+            
+        </collection>
+    </resultMap>
+    
+    
+
+<select id="queryAllCat" resultMap="catAll">
+
+select c1.name,c2.name,c2.catalog1_id,c3.name,c3.catalog2_id,c1.id as c1_id,c2.id as c2_id,c3.id as c3_id from pms_base_catalog1 c1 inner join pms_base_catalog2 c2 
+on c1.id=c2.catalog1_id inner JOIN pms_base_catalog3 c3
+on c2.id=c3.catalog2_id
+
+</select>
+   
+</mapper>

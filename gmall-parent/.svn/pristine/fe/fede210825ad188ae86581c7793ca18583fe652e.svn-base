@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "activemq.listener.enable",
+  "type": "java.lang.String",
+  "description": "A description for 'activemq.listener.enable'"
+}]}

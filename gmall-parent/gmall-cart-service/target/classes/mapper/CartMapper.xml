@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="com.atguigu.gmall.cart.mapper.OmsCartMapper">
+    
+<update id="editUserOmsCart" parameterType="com.atguigu.gmall.bean.OmsCartItem">
+	update oms_cart_item set  quantity=#{quantity},
+	modify_date=now() where  product_sku_id=#{productSkuId} and member_id=#{memberId}
+</update>
+
+
+</mapper>
